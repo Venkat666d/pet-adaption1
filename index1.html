@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Adoption Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <div class="container">
+    <div class="logo">adopt-a-pet</div>
+    <nav>
+      <ul> 
+        <li><a href="#">Home</a></li>
+        <li><a href="search/index.html">Find Pet</a></li>
+        <li><a href="process/index.html">Pet care tips</a></li>
+        <li><a href="care tips/index.html">Pet Products</a></li>
+        <li><a href="Contact/index.html">Contact</a></li>
+      </ul>
+    </nav>
+    <span id="user-email" class="user-info"></span> 
+<button class="cta-button">Adopt Now</button>
+<a href="login.html" class="login-button" id="login-btn">Login</a>
+<button id="logout-btn" class="logout-button" style="display: none;">Logout</button>
+
+  </div>
+</header>
+
+
+  <!-- Hero Slider -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('dog.jpg')">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="animated fadeInDown">Find Your Perfect Pet</h1>
+            <p class="animated fadeInUp">Give a loving home to a furry friend</p>
+            <div class="buttons animated fadeInUp">
+              <a href="search/index.html" class="primary-button">Find Pet</a>
+              <a href="process/index.html" class="secondary-button">Adoption Guide</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cathomme.jpg')">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="animated fadeInDown">Save a Life Today</h1>
+            <p class="animated fadeInUp">Every pet deserves a second chance</p>
+            <div class="buttons animated fadeInUp">
+              <a href="/success-stories" class="primary-button">Success Stories</a>
+              <a href="/donate" class="secondary-button">Support Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('tri.jpg')">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="animated fadeInDown">Save a Life Today</h1>
+            <p class="animated fadeInUp">Every pet deserves a second chance</p>
+            <div class="buttons animated fadeInUp">
+              <a href="/success-stories" class="primary-button">Success Stories</a>
+              <a href="/donate" class="secondary-button">Support Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+   <!-- Featured Pets Section -->
+   <section class="featured-pets">
+    <div class="container">
+      <h2>Meet Our Furry Friends 🐾</h2>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <img src="dog2.jpg" alt="Dog">
+          <h3>Max</h3>
+          <p>Golden Retriever | 2 years old</p>
+          <button>View Details</button>
+        </div>
+        <div class="pet-card">
+          <img src="cat3.jpg" alt="Cat">
+          <h3>Luna</h3>
+          <p>Siamese | 1 year old</p>
+          <button>View Details</button>
+        </div>
+        <div class="pet-card">
+          <img src="dog3.jpeg" alt="Dog">
+          <h3>Buddy</h3>
+          <p>Beagle | 3 years old</p>
+          <button>View Details</button>
+      </div>
+    </div>
+  </section>
+  <!-- Key Features Section -->
+  <section class="key-features">
+    <div class="container">
+      <h2>Why Adopt With Us?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <span>❤️</span>
+          <h3> Pets</h3>
+          <p>Street pets(especially street Dogs).</p>
+        </div>
+        <div class="feature">
+          <span>📋</span>
+          <h3>Easy Process</h3>
+          <p>Simple adoption steps.</p>
+        </div>
+        <div class="feature">
+          <span>🎓</span>
+          <h3>Good Support</h3>
+          <p>Guidance for pet care and training.</p>
+        </div>
+        <div class="feature">
+          <span>🏠</span>
+          <h3>Happy Homes</h3>
+          <p>Be the first one to give life to street pets!</p>
+        </div>
+      </div>
+    </div>
+  </section> 
+  <section id="why-street-dogs" class="key-features">
+    <div class="container">
+      <h2>Why Adopt Street Dogs? 🐾</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <span>💪</span>
+          <h3>Strong Immunity</h3>
+          <p>Street dogs often have natural resistance to many diseases</p>
+        </div>
+        <div class="feature">
+          <span>❤️</span>
+          <h3>Unconditional Love</h3>
+          <p>They show immense gratitude and loyalty to their adopters</p>
+        </div>
+        <div class="feature">
+          <span>🌍</span>
+          <h3>Save a Life</h3>
+          <p>Give a deserving street dog a chance at a better life</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="mission">
+        <h3>Our Mission</h3>
+        <p>Responsible Adopt-pet: Ensuring that pets are placed in loving, suitable homes.</p>
+        <p>Safer Adoptions: Verifying adopters and educating them about responsible pet care.</p>
+        <p>Pet Welfare First: Partnering with animal shelters, NGOs, and volunteers to ensure the best care for pets.</p>
+        <p>Community-Driven Approach: Encouraging pet lovers to support and guide new adopters.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="search/index.html">Find Pet</a></li>
+          <li><a href="/process/index.html">Adoption Guidelines</a></li>
+          <li><a href="Contact/index.html">Contact</a></li>
+          <li> </li>
+        </ul>
+      </div>
+     <div class="newsletter">
+    <h3>Join Our Newsletter</h3>
+    <input type="email" id="newsletter-email" placeholder="Enter your email">
+    <button onclick="subscribeNewsletter()">Subscribe</button>
+</div>
+
+<script>
+    function subscribeNewsletter() {
+        let email = document.getElementById('newsletter-email').value;
+        if (email) {
+            window.location.href = `mailto:ramireddyvenkat899@gmail.com?subject=Newsletter Subscription&body=Please add me to your newsletter. My email: ${email}`;
+        } else {
+            alert("Please enter a valid email!");
+        }
+    }
+</script>
+
+      <div class="social-media">
+        <h3>Follow Us</h3>
+        <i class="fa-brands fa-facebook"></i>
+        <a href="https://www.instagram.com/pritiprabha___" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+      <!-- <div class="location">
+        <h1>Embed Location Map</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31126.453476398397!2d80.54432495223627!3d16.241139716207222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a09009cab727f%3A0x4d1622fac97b15c2!2sVignan%20Online!5e0!3m2!1sen!2sin!4v1742225852222!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div> -->
+    </div>
+  </footer>    
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

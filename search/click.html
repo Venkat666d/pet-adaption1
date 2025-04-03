@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Popup Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .image-container {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+        }
+        .close {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container" onclick="openModal()">
+        <img src="dog5.jpg" alt="Click to view details" width="200">
+    </div>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img src="dog5.jpg" alt="Full View" width="100%">
+            <h2>Moon</h2>
+            <p>4 years old - Mixed Breed, Terrier</p>
+            <ul>
+                <li>Good with people in general</li>
+                <li>Good with children</li>
+                <li>Needs to be the ONLY pet in the home</li>
+                <li>Has lived with cats - it didn’t go well</li>
+                <li>Is a “lap cat”</li>
+                <li>Is active and playful</li>
+                <li>Accepts being handled/stroked</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

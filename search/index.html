@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-container select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .pet-card {
+            flex: 1 1 calc(33.333% - 40px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+
+        .pet-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .pet-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .pet-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pet-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .like-btn {
+            background: #ff6f61;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .like-btn:hover {
+            background: #ff4a3d;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="filter-container">
+            <select id="pet-filter">
+                <option value="all">Choose Pet Type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="rabbit">Rabbit</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="dog5.jpg" alt="Max">
+            <div class="pet-info">
+                <h3>Max</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Mumbai</p>
+                <button class="like-btn" onclick="redirectToHeart('Max', '3 years old', 'Mixed Breed', 'Mumbai')">❤️</button>
+            </div>
+        </div>
+
+        <div class="pet-card reserved" data-type="cat">
+            <span class="label reserved-label">🔒 Reserved</span>
+            <img src="dog6.jpg" alt="Bella">
+            <div class="pet-info">
+                <h3>Bella</h3>
+                <p>4 years old</p>
+                <p class="breed">British Shorthair</p>
+                <p class="location">📍 Goa</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="dog7.jpg" alt="Charlie">
+            <div class="pet-info">
+                <h3>Charlie</h3>
+                <p>5 years old</p>
+                <p class="breed">Labrador</p>
+                <p class="location">📍 Delhi</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="rabbit1.jpg" alt="Luna">
+            <div class="pet-info">
+                <h3>Luna</h3>
+                <p>3 years old</p>
+                <p class="breed">Siamese</p>
+                <p class="location">📍 Kolkata</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="11.jpg" alt="Rocky">
+            <div class="pet-info">
+                <h3>Rocky</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Chennai</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="12.jpg" alt="Daisy">
+            <div class="pet-info">
+                <h3>Daisy</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Hyderabad</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="13.jpg" alt="Milo">
+            <div class="pet-info">
+                <h3>Milo</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Pune</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="14.jpg" alt="Coco">
+            <div class="pet-info">
+                <h3>Coco</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Jaipur</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="15.jpg" alt="Buddy">
+            <div class="pet-info">
+                <h3>Buddy</h3>
+                <p>5 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Ahmedabad</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="16.jpg" alt="Oscar">
+            <div class="pet-info">
+                <h3>Oscar</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Surat</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="cat7.jpg" alt="Simba">
+            <div class="pet-info">
+                <h3>Simba</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Bangalore</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="cat8.jpg" alt="Nala">
+            <div class="pet-info">
+                <h3>Nala</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Lucknow</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="rabbit">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="ra5.jpg" alt="Thumper">
+            <div class="pet-info">
+                <h3>Thumper</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Chandigarh</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="cat9.jpg" alt="Mittens">
+            <div class="pet-info">
+                <h3>Mittens</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Patna</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="dog8.jpg" alt="Rex">
+            <div class="pet-info">
+                <h3>Rex</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Bhopal</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="dog9.jpg" alt="Bruno">
+            <div class="pet-info">
+                <h3>Bruno</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Indore</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="dog">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="16.jpg" alt="Shadow">
+            <div class="pet-info">
+                <h3>Shadow</h3>
+                <p>5 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Nagpur</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="c1.jpg" alt="Whiskers">
+            <div class="pet-info">
+                <h3>Whiskers</h3>
+                <p>4 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Varanasi</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">📌 Pinned</span>
+            <img src="c2.jpg" alt="Ginger">
+            <div class="pet-info">
+                <h3>Ginger</h3>
+                <p>3 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Surat</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+        <div class="pet-card pinned" data-type="cat">
+            <span class="label pinned-label">🔒 Reserved</span>
+            <img src="c3.jpg" alt="Snowball">
+            <div class="pet-info">
+                <h3>Snowball</h3>
+                <p>5 years old</p>
+                <p class="breed">Mixed Breed</p>
+                <p class="location">📍 Amritsar</p>
+                <button class="like-btn">❤️</button>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="add.js"></script>
+
+</body>
+</html>

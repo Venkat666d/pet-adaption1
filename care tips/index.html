@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+        .sidebar {
+            width: auto;
+            padding: 20px;
+            white-space: nowrap;
+            border-right: 1px solid #ddd;
+            
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 2;
+            padding-left: 0px;
+            margin-left: 20px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 250px;
+            text-align: center;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .hidden {
+            display: none;
+        }
+        .rating {
+            color: orange;
+        }
+        .shop-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .faq, .nutrition-section {
+            margin-top: 40px;
+        }
+        .faq h2, .nutrition-section h2 {
+            font-size: 24px;
+        }
+        .faq-item {
+            border-top: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .nutrition-section {
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .nutrition-section img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Filter</h2>
+        <h3>Lifestage</h3>
+        <label><input type="checkbox" class="filter" value="kitten" checked> Kitten</label><br>
+        <label><input type="checkbox" class="filter" value="adult"> Adult 1+</label><br>
+        <label><input type="checkbox" class="filter" value="senior"> Senior 7+</label>
+        
+        <h3>Health Category</h3>
+        <label><input type="checkbox" class="filter" value="digestive"> Digestive Health</label><br>
+        <label><input type="checkbox" class="filter" value="weight"> Weight Management</label><br>
+        <label><input type="checkbox" class="filter" value="skin"> Skin & Coat</label><br>
+        <label><input type="checkbox" class="filter" value="joint"> Joint Health</label><br>
+
+    
+        
+        <h3>Additional Needs</h3>
+        <label><input type="checkbox" class="filter" value="grain-free"> Grain-Free</label><br>
+        <label><input type="checkbox" class="filter" value="high-protein"> High-Protein</label><br>
+        <label><input type="checkbox" class="filter" value="low-calorie"> Low-Calorie</label><br>
+        <label><input type="checkbox" class="filter" value="sensitive"> Sensitive Stomach</label><br>
+        <label><input type="checkbox" class="filter" value="hairball"> Hairball Control</label><br>
+        <label><input type="checkbox" class="filter" value="grain-free"> Grain-Free</label><br>
+
+        
+        <h3>Technology</h3>
+        <label><input type="checkbox" class="filter" value="advanced-nutrition"> Advanced Nutrition</label><br>
+        <label><input type="checkbox" class="filter" value="probiotics"> Probiotics</label>
+        
+    </div>
+
+    <div class="content">
+        <div class="products">
+            <div class="product" data-category="kitten" data-health="digestive" data-needs="grain-free" data-tech="advanced-nutrition">
+                <img src="food2.png" alt="Kitten Food 1">
+                <h4>Hill's Science Diet Kitten Food</h4>
+                <p>Supports healthy growth and digestion.</p>
+                <div class="rating">★★★★★ 5.0</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="digestive" data-needs="grain-free" data-tech="advanced-nutrition">
+                <img src="food1.jpg" alt="Kitten Food 1">
+                <h4>Hill's Science Diet Kitten Food</h4>
+                <p>Supports healthy growth and digestion.</p>
+                <div class="rating">★★★★☆ 4.0</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="kitten" data-health="digestive" data-needs="grain-free" data-tech="advanced-nutrition">
+                <img src="food7.webp" alt="adult food 1">
+                <h4>Hill's Science Diet Kitten Food</h4>
+                <p>Supports healthy growth and digestion.</p>
+                <div class="rating">★★★★★ 5.0</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="kitten" data-health="digestive" data-needs="grain-free" data-tech="advanced-nutrition">
+                <img src="food4.png" alt="adult food 1">
+                <h4>Hill's Science Diet Kitten Food</h4>
+                <p>Supports healthy growth and digestion.</p>
+                <div class="rating">★★★★★ 5.0</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            
+            <div class="product" data-category="senior" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food7.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="senior" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food8.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food9.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food10.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food11.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food13.jpg" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food10.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food14.jpg" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food15.jpg" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food16.webp" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+            <div class="product" data-category="adult" data-health="weight" data-needs="high-protein" data-tech="probiotics">
+                <img src="food18.jpg" alt="senior Food 2">
+                <h4>Hill's Science Diet High-Protein Kitten Food</h4>
+                <p>Rich in proteins to support muscle development.</p>
+                <div class="rating">★★★★☆ 4.6</div>
+                <a href="#" class="shop-button">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">It looks like my pet’s food is currently out of stock. When will it be available again?</div>
+            <div class="faq-item">How can I know when my pet’s food will be back in stock?</div>
+            <div class="faq-item">How can I tell if my pet’s food formulation changed?</div>
+            <div class="faq-item">How much should I feed my pet?</div>
+        </div>
+
+        <div class="nutrition-section">
+            <h2>Science-led nutrition creates differences you can trust</h2>
+            <p>We lead the way in several scientific fields to create the quality nutrition your pet deserves.</p>
+            <h3>Science-led ingredients</h3>
+            <p>After years of research, experts at Hill’s have determined the gut microbiome supports not only your pet’s digestive health but their overall health as well.</p>
+            <!-- <img src="nutrition.jpg" alt="Science-led nutrition">
+            <a href="#">Learn More</a> -->
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.filter').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                let selectedCategories = Array.from(document.querySelectorAll('.filter:checked')).map(cb => cb.value);
+                document.querySelectorAll('.product').forEach(product => {
+                    let matches = selectedCategories.some(cat => 
+                        product.dataset.category === cat || 
+                        product.dataset.health === rabbit || 
+                        product.dataset.needs === dog || 
+                        product.dataset.tech === cat
+                    );
+                    product.classList.toggle('hidden', !matches);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

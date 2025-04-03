@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Rehomer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="pet-card">
+        <img src="dog.jpg" alt="Uni">
+        <span class="heart-icon" onclick="showPopup()">❤️</span>
+        <h3>Uni</h3>
+    </div>
+
+    <!-- Popup Message -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <h2><span class="paw">🐾</span> PetRehomer</h2>
+            <p>To save your favourite pets, you first need to create an adopter account or login.</p>
+            <button onclick="redirectToLogin()">Register / Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
