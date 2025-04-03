@@ -132,7 +132,7 @@
                 if (data.message === "Login successful!") {
                     const username = email.split('@')[0]; // Extracts only the username
                     localStorage.setItem("loggedInUser", username); // Store short username
-                    window.location.href = "index.html"; // Redirect to dashboard
+                    window.location.href = "index.html"; // Redirect to the main page
                 }
             })
             .catch(error => alert("Error: " + error));
